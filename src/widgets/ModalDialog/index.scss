@@ -1,0 +1,61 @@
+// 关联项目弹框样式修改
+.relevance-project{
+  .el-dialog__header{
+    .el-dialog__headerbtn{
+      height: 16px;
+      .el-icon{
+        --font-size: 16px;
+      }
+    }
+  }
+
+  .el-dialog__body{
+
+  }
+}
+
+.el-form{
+  .el-form-item__label{
+    color:#303133;
+  }
+}
+
+.modal-container__footer{
+  .el-button--small{
+    padding: 9px 21px;
+    min-height: 30px;
+    height:30px;
+  }
+  .dialog-confirm-cancle {
+    color: #303133;
+  }
+}
+
+.relevance-confirm{
+  .el-dialog__header{
+    height: 48px !important;
+    padding: 10px !important;
+    border-bottom:none !important;
+
+    .icon-font{
+      margin-top: 2px;
+      color:orange;
+    }
+
+    .el-dialog__headerbtn{
+      top: 16px;
+    }
+  }
+
+  .modal-container__component{
+    color:#303133 !important;
+  }
+
+  .modal-container__footer{
+    border-top:none !important;
+  }
+}
+
+.import-template-modal{
+  margin-top: 8vh !important;
+}

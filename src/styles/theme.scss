@@ -1,0 +1,14 @@
+@use "element-plus/theme-chalk/src/index.scss" as *;
+
+#nprogress .bar {
+  background: --el-color-primary !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px --el-color-primary, 0 0 5px --el-color-primary !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: --el-color-primary;
+  border-left-color: --el-color-primary;
+}
