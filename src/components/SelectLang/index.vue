@@ -55,6 +55,7 @@ const selectLang = (lang) => {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  color: var(--el-color-primary-light-7);
   transition: background 0.3s;
 
   &:hover {

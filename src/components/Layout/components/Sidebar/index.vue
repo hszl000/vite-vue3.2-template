@@ -6,10 +6,10 @@
         :size="40"
         src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
       />
-      <transition name="title">
-        <h3 class="logo-title" v-if="layoutStore.getSideBarOpen">
+      <transition name="fide">
+        <h4 class="logo-title" v-if="layoutStore.getSideBarOpen">
           {{ $t("layout.title") }}
-        </h3>
+        </h4>
       </transition>
     </div>
     <el-scrollbar>
@@ -48,16 +48,6 @@ const layoutStore = useLayoutStore();
     }
     :deep(.el-avatar) {
       // --el-avatar-background-color: none;
-    }
-
-    .title-enter-active,
-    .title-leave-active {
-      transition: all 0.2s linear;
-    }
-    .title-enter-from,
-    .title-leave-to {
-      opacity: 0;
-      transform: rotateY(90deg);
     }
   }
   :deep(.el-scrollbar) {

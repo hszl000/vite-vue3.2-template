@@ -8,7 +8,8 @@
     unique-opened
     router
     ellipsis
-    :collapse="!sideBarOpen"
+    :mode='["left"].includes(layoutFormat)?"vertical":"horizontal"'
+    :collapse='!sideBarOpen && ["left"].includes(layoutFormat)'
   >
   <!-- mode='' horizontal or vertical -->
     <!-- 菜单展示组件（一二级） -->
@@ -56,11 +57,38 @@ const routes = computed(() => {
 const sideBarOpen = computed(() => {
   return layoutStore.getSideBarOpen;
 });
+// 当前布局
+const layoutFormat = computed(()=>layoutStore.getLayoutFormat)
 </script>
 
 <style lang='scss' scoped>
-.el-menu {
+.el-menu.el-menu--horizontal{
   border-right: 1px solid var(--el-color-primary);
+  --el-menu-hover-bg-color:var(--el-color-primary-light-7) !important;
+
+    .el-menu-item {
+      .el-menu-tooltip__trigger {
+        .icons {
+          margin-right: 0;
+        }
+      }
+
+      &:hover {
+        background: var(--el-color-primary-light-7);
+      }
+    }
+
+  .el-sub-menu{
+    .el-menu-tooltip__trigger {
+      .icons {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.el-menu.el-menu--vertical {
+  border-right: 1px solid var(--el-color-primary);
+  --el-menu-hover-bg-color:var(--el-color-primary-light-7) !important;
   
   .el-menu-item {
     &.is-active {

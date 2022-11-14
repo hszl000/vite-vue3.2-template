@@ -95,11 +95,8 @@ import {
   defineComponent,
   getCurrentInstance,
   ref,
-  computed,
-  onMounted,
-  nextTick,
+  computed
 } from "vue";
-// import { useStore } from "vuex";
 
 export default defineComponent({
   name: "Modal",
@@ -147,7 +144,6 @@ export default defineComponent({
   },
   setup(props, { attrs }) {
     const { proxy } = getCurrentInstance();
-    // const store = useStore();
 
     const visible = ref(false);
 

@@ -1,23 +1,37 @@
 <template>
-  <div>Home</div>
-  <el-button v-drag @click="showLoading">按钮</el-button>
-  <el-select v-model="value">
-    <template #empty>
-      <el-tree
-        :data="data"
-        :props="defaultProps"
-        node-key="label"
-        @node-click="handleNodeClick"
-      />
-    </template>
-  </el-select>
-  <el-button v-copy='value'>复制</el-button>
+  <div>
+    <div>Home</div>
+    <el-button v-drag @click="showLoading">拖拽 loading</el-button>
+    <el-select v-model="value" clearable>
+      <template #empty>
+        <el-tree
+          :data="data"
+          :props="defaultProps"
+          node-key="label"
+          @node-click="handleNodeClick"
+        />
+      </template>
+    </el-select>
+    <el-button v-copy="value">复制</el-button>
+    <el-button @click="toggleLayout">切换布局</el-button>
+    <el-button v-longpress="longpress">长按触发</el-button>
+    <el-input
+      placeholder="防抖"
+      style="width: 200px"
+      v-debounce="debounce"
+      v-model="value"
+    />
+  </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { ServiceLoading } from "widgets/loading.js";
+import { storeToRefs } from "pinia";
+import { useLayoutStore } from "comps/Layout/store";
 
+const layoutStore = useLayoutStore();
+const { layoutFormat } = storeToRefs(layoutStore);
 const value = ref("");
 
 const handleNodeClick = (data) => {
@@ -96,6 +110,22 @@ const showLoading = () => {
   setTimeout(() => {
     ServiceLoading.hide();
   }, 2000);
+};
+
+const toggleLayout = () => {
+  if (["left"].includes(layoutFormat.value)) {
+    layoutFormat.value = "top";
+  } else {
+    layoutFormat.value = "left";
+  }
+};
+
+const longpress = () => {
+  alert("长按触发");
+};
+
+const debounce = () => {
+  console.log("防抖");
 };
 </script>
 

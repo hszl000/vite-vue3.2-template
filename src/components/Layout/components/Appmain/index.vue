@@ -2,7 +2,9 @@
   <el-scrollbar>
     <div class="app-main">
       <router-view #default="{ Component }">
-        <component :is="Component" />
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
       </router-view>
     </div>
   </el-scrollbar>

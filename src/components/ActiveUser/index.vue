@@ -1,17 +1,21 @@
 <template>
-  <el-dropdown class="avatar-containe">
-    <!-- 头像 -->
+  <el-dropdown 
+    trigger="click"
+    class="avatar-containe"
+  >
     <div class="avatar-wrapper">
-      <!-- <el-avatar
-        shape="square"
-        :size="40"
-        src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-      /> -->
-      <div class="userName">张三</div>
+      <h4 class="userName">
+        {{userAccountStore.userInfo.userName}}
+        ({{userAccountStore.userInfo.userCode}})
+      </h4>
     </div>
     <template #dropdown>
       <el-dropdown-menu class="user-drop-down">
-        <el-dropdown-item @click="routerHome">{{
+        <el-dropdown-item>
+          {{userAccountStore.userInfo.userName}}
+          ({{userAccountStore.userInfo.userCode}})
+        </el-dropdown-item>
+        <el-dropdown-item divided @click="routerHome">{{
           $t("layout.home")
         }}</el-dropdown-item>
         <!-- <el-dropdown-item>{{ $t("msg.navBar.course") }}</el-dropdown-item> -->
@@ -25,9 +29,17 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import {useUserAccountStore} from 'modules/UserAccount/store'
+
+const userAccountStore = useUserAccountStore()
+
 const router = useRouter();
 // 主动退出
-const logout = () => {};
+const logout = () => {
+  router.replace({
+    name:'ProjectLogin'
+  })
+};
 // 跳转首页
 const routerHome = () => {
   router.push("/");
@@ -36,8 +48,7 @@ const routerHome = () => {
 
 <style lang='scss' scoped>
 .userName {
-  font-size: 16px;
-  font-weight: 600;
   margin: 0 5px;
+  color:var(--el-color-primary-light-7)
 }
 </style>

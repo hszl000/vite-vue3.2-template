@@ -18,7 +18,6 @@
 </template>
 
 <script setup>
-import { ElBreadcrumb, ElBreadcrumbItem } from "element-plus";
 import { useRouter, useRoute } from "vue-router";
 import { watch, ref } from "vue";
 import { getTitle } from "utils/lang.js";
