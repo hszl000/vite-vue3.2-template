@@ -3,7 +3,7 @@ export default {
   name: "ProjectConfig",
   meta: {
     title: "systemLayout",
-    icon: "user",
+    icon: "setting",
     roles: ["4"],
   },
   component: () => import("@/components/Layout/pages/index.vue"),
@@ -17,7 +17,7 @@ export default {
       name: "ProjectPermissionConfig",
       meta: {
         title: "permissionConfig",
-        icon: "user",
+        icon: "permission",
         roles: ["4-2"],
       },
       component: () =>
