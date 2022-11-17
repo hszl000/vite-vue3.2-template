@@ -1,20 +1,63 @@
-import store from '@/store/index.js'
+import { useUserAccountStore } from "modules/UserAccount/store";
 
-const checkoutButton = (el, binding, vnode) => {
-  const {
-    userCode
-  } = store.state.UserAccount.userInfo
-  
-  if (!binding.value.some(item => userCode.includes(item))) {
-      el.parentNode && el.parentNode.removeChild(el)
+const checkoutButton = (el, binding) => {
+  // console.log(el, binding, vnode, "按钮权限");
+  const userAccountStore = useUserAccountStore();
+  // const permissionList = [
+  //   '1', // 工作日历
+  //   '2', // 派遣管理
+  //   '2-1', // 人员维度派遣
+  //   '2-1-1', // 按钮：派遣与修改
+  //   '2-1-2', // 按钮：取消派遣
+  //   '2-1-3', // 按钮：历史派遣调整
+  //   '2-2', // 项目维度派遣
+  //   '2-2-1', // 按钮：派遣与修改
+  //   '2-2-2', // 按钮：取消派遣
+  //   '2-2-3', // 按钮：退出
+  //   '2-2-4', // 按钮：调回
+  //   '2-3', // 借调申请
+  //   '3', // 报表中心
+  //   '3-1', // 报表中心-区域维度
+  //   '3-1-1', // 报表中心-区域维度-导出
+  //   '3-2', // 报表中心-业务条线维度
+  //   '3-2-1', // 报表中心-业务条线维度-导出
+  //   '3-3', // 报表中心-部门维度
+  //   '3-3-1', // 报表中心-部门维度-导出
+  //   '3-4', // 报表中心-项目派遣查询
+  //   '3-4-1', // 报表中心-项目派遣查询-导出
+  //   '3-5', // 报表中心-人员派遣查询
+  //   '3-5-1', // 报表中心-人员派遣查询-导出
+  //   '3-6', // 报表中心-派遣日志
+  //   '3-6-1', // 报表中心-派遣日志-导出
+  //   '4', // 系统配置
+  //   '4-1', // 系统配置-系统配置
+  //   '4-2', // 系统配置-权限管理
+  //   '4-2-1', // 系统配置-权限管理-新建
+  //   '4-2-2', // 系统配置-权限管理-编辑
+  //   '4-2-3', // 系统配置-权限管理-停用
+  //   '4-3', // 系统配置-人员借调批量设置
+  //   '4-3-1', // 系统配置-人员借调批量设置-新建
+  //   '4-3-2', // 系统配置-人员借调批量设置-编辑
+  //   '4-3-3', // 系统配置-人员借调批量设置-删除
+  //   '4-4', // 系统配置-借调协调人维护
+  //   '4-4-1', // 系统配置-借调协调人维护-新建
+  //   '4-4-2', // 系统配置-借调协调人维护-编辑
+  //   '4-4-3'// 系统配置-借调协调人维护-删除
+  // ]
+  if (
+    !binding.value.some((item) =>
+      userAccountStore.getPermissionList.includes(item)
+    )
+  ) {
+    el.parentNode && el.parentNode.removeChild(el);
   }
-}
+};
 
 export default {
-  mounted (el, binding, vnode) {
-    checkoutButton(el, binding, vnode)
+  mounted(el, binding, vnode) {
+    checkoutButton(el, binding, vnode);
   },
-  updated (el, binding, vnode) {
-    checkoutButton(el, binding, vnode)
-  }
-}
+  updated(el, binding, vnode) {
+    checkoutButton(el, binding, vnode);
+  },
+};

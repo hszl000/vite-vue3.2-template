@@ -15,7 +15,8 @@ export const useLayoutStore = defineStore('Layout', {
       originalTheme: "#409EFF",
       // tag
       tagViewList:[],
-      themeColor:'#1D561D'
+      themeColor:'#1D561D',
+      layoutFormat:'top'
     }
   },
   getters: {
@@ -24,6 +25,7 @@ export const useLayoutStore = defineStore('Layout', {
     getOriginalTheme:state=>state.originalTheme,
     getTagViewList:state=>state.tagViewList,
     getThemeColor:state=>state.themeColor,
+    getLayoutFormat:state=>state.layoutFormat,
   },
   actions: {
     // 测试
@@ -60,4 +62,5 @@ export const useLayoutStore = defineStore('Layout', {
       }
     }
   },
+  ...mixin
 })
