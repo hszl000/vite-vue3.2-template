@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-import { ElConfigProvider } from "element-plus";
 // element-plus的语言包
 import zhCn from "element-plus/dist/locale/zh-cn.mjs";
 import en from "element-plus/dist/locale/en.mjs";

@@ -2,12 +2,23 @@ import axios from 'axios'
 import Cookie from 'js-cookie'
 import router from '@/router'
 
-// errorRedirect
+/**
+ * @param {function} errorRedirect 错误重定向
+ * @param {string} path 错误重定向
+ */
 function errorRedirect(path){
   router.push(`/${path}`)
 }
 
-// code Message
+/**
+ * @param {Array} errorStatus 错误状态码！
+ * @descript 包含错误状态码的响应则重定向
+ */
+const errorStatus = [401]
+
+/**
+ * @param {Object} codeMessage code Message 状态码信息
+ */
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
   // 200: 'The server successfully returned the requested data.',
@@ -125,6 +136,10 @@ service.interceptors.response.use(response=>{
    */
   if (error.config.redirect) {
     errorRedirect(error.config.redirect)
+  }
+  // 指定错误码重定向 login
+  if(errorStatus.includes(error.response.status)){
+    errorRedirect('/login')
   }
   if (error.response) {
     return {

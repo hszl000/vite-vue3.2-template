@@ -1,9 +1,20 @@
 import request from 'utils/request'
 
-export function getUserInfo (params) {
+// 获取用户数据
+export function getUserInfo (data) {
   return request({
-    url: '/api/demo_test/list',
+    url: '/acl/whoami',
     method: 'get',
-    params
+    data,
+    redirect:'/login'
+  })
+}
+
+// 获取用户权限
+export function getUserMenu (data) {
+  return request({
+    url: '/acl/getUserMenu',
+    method: 'post',
+    data
   })
 }

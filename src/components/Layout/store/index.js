@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia'
 import {
-  getXXX
-} from 'modules/Home/api'
+  getMsgList, // 获取消息
+  getTodoList, // 获取待办
+  delUserAllMsg, // 一键已读
+} from 'comps/Layout/api'
 import mixin from 'store/utils/mixin'
 import { sleep } from '@/utils/request'
 
@@ -15,8 +17,10 @@ export const useLayoutStore = defineStore('Layout', {
       originalTheme: "#409EFF",
       // tag
       tagViewList:[],
-      themeColor:'#1D561D',
-      layoutFormat:'top'
+      themeColor:'#495164',
+      layoutFormat:'top',
+      msgList:[], // 消息
+      todoList:[] // 待办
     }
   },
   getters: {
@@ -26,6 +30,8 @@ export const useLayoutStore = defineStore('Layout', {
     getTagViewList:state=>state.tagViewList,
     getThemeColor:state=>state.themeColor,
     getLayoutFormat:state=>state.layoutFormat,
+    getMsgList:state=>state.msgList,
+    getTodoList:state=>state.todoList
   },
   actions: {
     // 测试
@@ -49,7 +55,7 @@ export const useLayoutStore = defineStore('Layout', {
       关闭业务
       params:paylod:(type: "index"||"right"||"other",index:'index')
     */
-      closeTag({ type, index }) {
+    closeTag({ type, index }) {
       if (type === 'index') {
         // 删除当前
         this.tagViewList.splice(index, 1)
@@ -60,7 +66,24 @@ export const useLayoutStore = defineStore('Layout', {
         // 删除其他
         this.tagViewList = [this.tagViewList[index]]
       }
-    }
+    },
+    // 消息
+    async askMsgList(data){
+      const res = await getMsgList(data)
+      this.msgList = res.result
+      return this.filterResponse(res)
+    },
+    // 待办
+    async askTodoList(data){
+      const res = await getTodoList(data)
+      this.todoList = res.result
+      return this.filterResponse(res)
+    },
+    // 一键已读
+    async delUserAllMsg(data){
+      const res = await delUserAllMsg(data)
+      return this.filterResponse(res)
+    },
   },
   ...mixin
 })

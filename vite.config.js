@@ -9,11 +9,21 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 // 导入 path
 const path = require('path')
 
+const htmlPlugin = () => {
+  return {
+    name: 'html-transform',
+    transformIndexHtml (html) {
+      return html.replace(/<title>(.*?)<\/title>/, '<title>system</title>')
+    }
+  }
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base:'/basis-templete-permissions',
   plugins: [
     vue(),
+    htmlPlugin(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),
@@ -28,6 +38,13 @@ export default defineConfig({
   ],
   server: {
     port: 5000,
+    proxy: {
+      '/api': {
+        target: 'http://172.20.112.32/employee-assignment/api/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   },
   resolve: {
     alias: [

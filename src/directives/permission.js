@@ -1,6 +1,6 @@
 import { useUserAccountStore } from "modules/UserAccount/store";
 
-const checkoutButton = (el, binding) => {
+const checkoutButton = (el, binding, vnode) => {
   // console.log(el, binding, vnode, "按钮权限");
   const userAccountStore = useUserAccountStore();
   // const permissionList = [

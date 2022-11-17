@@ -40,5 +40,6 @@ svg {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  /* color: var(--el-color-primary-light-5); */
 }
 </style>

@@ -36,7 +36,6 @@
 
 <script>
 import { defineComponent, reactive, toRefs } from "vue";
-// import { useStore } from 'vuex'
 
 const useCalendarMonth = (
   currentYear,
@@ -142,7 +141,6 @@ export default defineComponent({
   },
   setup(props) {
     // Vuex store
-    // const store = useStore()
 
     const { startDay, endDay, errorDay } = toRefs(props.calendarData);
 

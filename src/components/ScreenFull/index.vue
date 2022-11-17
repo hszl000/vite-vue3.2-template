@@ -24,5 +24,6 @@ const toggleScreenFull = () => {
   width: 20px;
   height: 20px;
   padding: 10px;
+  color: var(--el-color-primary-light-7);
 }
 </style>
