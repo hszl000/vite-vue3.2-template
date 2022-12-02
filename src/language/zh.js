@@ -33,6 +33,13 @@ export default {
     personnelSecondmentBatchSetting: "人员借调批量设置",
     secondedCoordinatorForMaintenance: "借调协调人维护",
     newPermission: "新增权限",
+    guide:'流程指引',
+    study:'学习',
+    ProxyAndReflect:'Proxy 和 Reflect',
+    set:'Set',
+    map:'Map',
+    wangEditor:'富文本编辑器',
+    numComma:'千分位互转'
   },
   base: {
     upros: "通用专业系统",

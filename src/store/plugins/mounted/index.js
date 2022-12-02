@@ -11,7 +11,6 @@ import router from 'router'
 const mixinVuex = context => {
   context.store.filterResponse = filterResponse
   context.store.router = router
-  // console.log(context,'context')
 }
 
 export default mixinVuex

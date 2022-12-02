@@ -20,7 +20,6 @@ const getChildrenRoutes = (routes) => {
 export const filterRouter = (routes) => {
   // 获取所有二级路由
   const childrenRoutes = getChildrenRoutes(routes);
-  console.log(childrenRoutes, "childrenRoutes");
   return routes.filter((route) => {
     return !childrenRoutes.find(
       (childrenRoute) => childrenRoute.name === route.name

@@ -7,7 +7,7 @@ import router from '@/router'
  * @param {string} path 错误重定向
  */
 function errorRedirect(path){
-  router.push(`/${path}`)
+  router.push(path)
 }
 
 /**
@@ -59,7 +59,7 @@ const codeMessage = {
 // 创建 axios 实例
 const service = axios.create({
   // 默认地址
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_BASE_URL,
   // 超时时间
   timeout: 100000,
 })
@@ -70,7 +70,8 @@ const service = axios.create({
  service.interceptors.request.use(request=>{
   const token = Cookie.get('token')
   // 封装请求 携带 token
-  request.headers.Authorization = token || ''
+  request.headers.Authorization = `Bearer ${token}` || ''
+  // request.headers.Authorization = token || ''
   return request
  },error=>{
   return new Promise.reject(error)
@@ -91,7 +92,7 @@ service.interceptors.response.use(response=>{
   const {data}= response
   // 处理未登录（token失效 or 没有token）
   if(data.msg?.includes('user not log in') && data.error === -1){
-    errorRedirect('login')
+    errorRedirect('/login')
     return
   }
 

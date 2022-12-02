@@ -62,58 +62,9 @@ const layoutFormat = computed(()=>layoutStore.getLayoutFormat)
 </script>
 
 <style lang='scss' scoped>
-.el-menu.el-menu--horizontal{
+.el-menu {
   border-right: 1px solid var(--el-color-primary);
-  --el-menu-hover-bg-color:var(--el-color-primary-light-7) !important;
-
-    .el-menu-item {
-      .el-menu-tooltip__trigger {
-        .icons {
-          margin-right: 0;
-        }
-      }
-
-      &:hover {
-        background: var(--el-color-primary-light-7);
-      }
-    }
-
-  .el-sub-menu{
-    .el-menu-tooltip__trigger {
-      .icons {
-        margin-right: 0;
-      }
-    }
-  }
-}
-.el-menu.el-menu--vertical {
-  border-right: 1px solid var(--el-color-primary);
-  --el-menu-hover-bg-color:var(--el-color-primary-light-7) !important;
-  
-  .el-menu-item {
-    &.is-active {
-      background: var(--el-color-primary-light-9);
-      &::before {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 4px;
-        content: "";
-        background: var(--el-color-primary-light-5);
-      }
-    }
-
-    .el-menu-tooltip__trigger {
-      .icons {
-        margin-right: 0;
-      }
-    }
-
-    &:hover {
-      background: var(--el-color-primary-light-7);
-    }
-  }
+  border-bottom: none;
 
   .el-sub-menu{
     .el-menu-tooltip__trigger {

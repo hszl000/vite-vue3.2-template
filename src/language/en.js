@@ -33,6 +33,13 @@ export default {
     personnelSecondmentBatchSetting: "Personnel secondment batch setting",
     secondedCoordinatorForMaintenance: "Seconded coordinator for maintenance",
     newPermission: "new Permission",
+    guide:'Process Guide',
+    study:'study',
+    ProxyAndReflect:'Proxy And Reflect',
+    set:'Set',
+    map:'Map',
+    wangEditor:'wangEditor',
+    numComma:'Number Comma'
   },
   base: {
     upros: "Universal Professional  System",

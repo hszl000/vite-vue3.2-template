@@ -10,7 +10,6 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { useLayoutStore } from "comps/Layout/store";
-import { defineProps, defineEmits } from "vue";
 const router = useRouter();
 const layoutStore = useLayoutStore();
 const props = defineProps({

@@ -466,12 +466,12 @@ const readFn = async () => {
   }
 };
 // 一分钟调用一次
-window.setInterval(() => {
-  setTimeout(() => {
-    messageList();
-    getTodoList();
-  }, 0);
-}, 60000);
+// window.setInterval(() => {
+//   setTimeout(() => {
+//     messageList();
+//     getTodoList();
+//   }, 0);
+// }, 60000);
 
 // 暴露组件数据
 defineExpose({

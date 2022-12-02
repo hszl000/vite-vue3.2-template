@@ -47,6 +47,7 @@ watch(
     if (!chalk.value) {
       const url = `https://unpkg.com/element-plus@${version.value}/dist/index.css`;
       await getCSSString(url);
+      ElMessage.success(proxy.$t("layout.theme"));
     }
 
     const chalkHandler = getHandler(
@@ -76,6 +77,7 @@ const openTheme = () => {
   proxy.$ModalDialog({
     title: proxy.$t("layout.themeName"),
     dialogWidth: "300px",
+    class:'aaa',
     isDark: true,
     renderComponent: {
       data: theme,
@@ -86,7 +88,6 @@ const openTheme = () => {
       //   state.themeColor = theme.value;
       // });
       layoutStore.$patch({ themeColor: theme.value });
-      ElMessage.success(proxy.$t("layout.theme"));
     },
   });
 };

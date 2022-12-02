@@ -9,38 +9,37 @@ import { sleep } from '@/utils/request'
 
 // 第一个参数是应用程序中 store 的唯一 id
 export const useLayoutStore = defineStore('Layout', {
-  state:()=>{
+  state: () => {
     return {
-      toggleSideBar:false,
-      language:'zh',
+      toggleSideBar: false,
+      language: 'zh',
       // ⚠ ele default primary
       originalTheme: "#409EFF",
       // tag
-      tagViewList:[],
-      themeColor:'#495164',
-      layoutFormat:'top',
-      msgList:[], // 消息
-      todoList:[] // 待办
+      tagViewList: [],
+      themeColor: '#495164',
+      layoutFormat: 'top',
+      msgList: [], // 消息
+      todoList: [] // 待办
     }
   },
   getters: {
-    getSideBarOpen: state=>state.toggleSideBar,
-    getLanguage:state=>state.language,
-    getOriginalTheme:state=>state.originalTheme,
-    getTagViewList:state=>state.tagViewList,
-    getThemeColor:state=>state.themeColor,
-    getLayoutFormat:state=>state.layoutFormat,
-    getMsgList:state=>state.msgList,
-    getTodoList:state=>state.todoList
+    getSideBarOpen: state => state.toggleSideBar,
+    getLanguage: state => state.language,
+    getOriginalTheme: state => state.originalTheme,
+    getTagViewList: state => state.tagViewList,
+    getThemeColor: state => state.themeColor,
+    getLayoutFormat: state => state.layoutFormat,
+    getMsgList: state => state.msgList,
+    getTodoList: state => state.todoList
   },
   actions: {
     // 测试
-    setXxx (data) {
+    setXxx(data) {
       this.isXXX = data
-      console.log(this,'this')
+      console.log(this, 'this')
     },
     addTagViewList(route) {
-      console.log(this.tagViewList,'this')
       // 如果存在路由，不能push
       const isFind = this.tagViewList.find((item) => item.path === route.path)
       if (!isFind) {
@@ -68,19 +67,19 @@ export const useLayoutStore = defineStore('Layout', {
       }
     },
     // 消息
-    async askMsgList(data){
+    async askMsgList(data) {
       const res = await getMsgList(data)
       this.msgList = res.result
       return this.filterResponse(res)
     },
     // 待办
-    async askTodoList(data){
+    async askTodoList(data) {
       const res = await getTodoList(data)
       this.todoList = res.result
       return this.filterResponse(res)
     },
     // 一键已读
-    async delUserAllMsg(data){
+    async delUserAllMsg(data) {
       const res = await delUserAllMsg(data)
       return this.filterResponse(res)
     },

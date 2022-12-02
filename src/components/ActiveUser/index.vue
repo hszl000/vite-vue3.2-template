@@ -5,15 +5,13 @@
   >
     <div class="avatar-wrapper">
       <h4 class="userName">
-        {{userAccountStore.userInfo.userName}}
-        ({{userAccountStore.userInfo.userCode}})
+        {{userAccountStore.userInfo.username}}
       </h4>
     </div>
     <template #dropdown>
       <el-dropdown-menu class="user-drop-down">
         <el-dropdown-item>
           {{userAccountStore.userInfo.userName}}
-          ({{userAccountStore.userInfo.userCode}})
         </el-dropdown-item>
         <el-dropdown-item divided @click="routerHome">{{
           $t("layout.home")
