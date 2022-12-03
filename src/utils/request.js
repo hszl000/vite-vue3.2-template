@@ -7,7 +7,7 @@ import router from '@/router'
  * @param {string} path 错误重定向
  */
 function errorRedirect(path){
-  router.push(`/${path}`)
+  router.push(path)
 }
 
 /**
@@ -91,7 +91,7 @@ service.interceptors.response.use(response=>{
   const {data}= response
   // 处理未登录（token失效 or 没有token）
   if(data.msg?.includes('user not log in') && data.error === -1){
-    errorRedirect('login')
+    errorRedirect('/login')
     return
   }
 

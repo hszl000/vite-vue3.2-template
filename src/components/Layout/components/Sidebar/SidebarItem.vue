@@ -27,7 +27,6 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
 import { ElSubMenu, ElMenuItem } from "element-plus";
 import MenuItem from "@/components/Layout/components/Sidebar/MenuItem.vue";
 import { getTitle } from "utils/lang.js";
@@ -42,6 +41,7 @@ defineProps({
 
 <style lang='scss' scoped>
 .el-menu-item {
+  --el-menu-hover-bg-color:var(--el-color-primary-light-7) !important;
   &.is-active {
     background: var(--el-color-primary-light-9);
     &::before {

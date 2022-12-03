@@ -30,6 +30,9 @@ router.beforeEach(async(to,from,next)=>{
   if(to.name === 'ProjectLogin'){
     Cookie.remove('token')
     Cookie.remove('name')
+
+    // 清除用户数据
+    userAccountStore.logout()
     return next()
   }
 
@@ -44,12 +47,12 @@ router.beforeEach(async(to,from,next)=>{
       Cookie.set('token',token)
       Cookie.set('name',result.userName)
 
+      
       // 4.如果没有菜单列表，就重新请求菜单列表并添加动态路由
       const userCode = userAccountStore.getUserInfo.userCode
-      const {error:err,result:res} = await userAccountStore.askUserMenu({code:userCode})
+      const {error:err} = await userAccountStore.askUserMenu({code:userCode})
       if(!err){
-        await userAccountStore.filterPrivateRoutes(res)
-        return next()
+        return next({ ...to, replace: true })
       }
     }else{
       ElMessage.error('身份过期，请重新登录')
