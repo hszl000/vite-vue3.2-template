@@ -106,6 +106,7 @@ import {
 } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useNewPermissionStore } from "modules/NewPermission/store";
+import {useUserAccountStore} from 'modules/UserAccount/store'
 import AuthorizedUsers from "@/modules/NewPermission/components/AuthorizedUsers.vue";
 import RankMatching from "@/modules/NewPermission/components/RankMatching.vue";
 import RoleMatching from "@/modules/NewPermission/components/RoleMatching.vue";
@@ -113,6 +114,9 @@ const { proxy } = getCurrentInstance();
 const route = useRoute();
 const router = useRouter();
 const newPermissionStore = useNewPermissionStore();
+	const userAccountStore = useUserAccountStore()
+// 获取当前登陆人权限
+const permissionMenu = computed(()=>userAccountStore.getPermissionList)
 
 const authorizedUsersRef = ref(null);
 const rankMatchingRef = ref(null);
@@ -210,6 +214,10 @@ const checkedChangeFn = () => {
   });
 };
 const rormRef = ref(null);
+	const generateMenu = async()=>{
+  const userCode = userAccountStore.getUserInfo.userCode
+  return userAccountStore.askUserMenu({code:userCode})
+}
 // 提交
 const submitFn = async () => {
   rormRef.value.validate(async (valid) => {
@@ -225,23 +233,50 @@ const submitFn = async () => {
         checkedList.value.length > 0 &&
         currentRow
       ) {
+         const asorgroleUuid = roleMatchingRef.value.tableData?.map((item) => {
+          return { asorgroleUuid: item.asorgroleUuid };
+        });
+        const levelCode = rankMatchingRef.value.tableData?.map((item) => {
+          return { levelCode: item.levelCode };
+        });
+        // 过滤数组中对象
+        const myMap = (arr, key) => {
+          const map = new Map();
+          for (const item of arr) {
+            if (!map.has(item[key])) {
+              map.set(item[key], item);
+            }
+          }
+          return [...map.values()];
+        };
         if (route.query.id) {
           // 调修改
           const { error } = await newPermissionStore.updateById({
-            roleCode: permissionList.value.postCode, // 岗位编码
-            roleName: permissionList.value.postName, // 岗位名称
-            byLevelUserList: rankMatchingRef.value.tableData, // 职级自动匹配用户
-            byRoleUserList: roleMatchingRef.value.tableData, // 角色自动匹配用户
-            menuTree: checkedList.value, // 权限树
-            userList: authorizedUsersRef.value.authorizeUserList, // 授权用户
-            id: route.query.id,
+              roleName: permissionList.value.postName, // 岗位名称
+              byLevelUserList:
+                levelCode === undefined ? [] : myMap(levelCode, "levelCode"), // 职级自动匹配用户
+              byRoleUserList:
+                asorgroleUuid === undefined
+                  ? []
+                  : myMap(asorgroleUuid, "asorgroleUuid"), // 角色自动匹配用户
+              menuTree: checkedList.value, // 权限树
+              userList:
+                authorizedUsersRef.value.authorizeUserList === null
+                  ? []
+                  : authorizedUsersRef.value.authorizeUserList, // 授权用户
+              id: route.query.id,
           });
           if (!error) {
             ElMessage({
               type: "success",
               message: "编辑成功",
             });
-            router.push("/config/permissionconfig");
+            await generateMenu()
+            if(permissionMenu.value.includes("4-2")){
+              router.push("/config/permissionconfig");
+            }else{
+              router.push("/home");
+            }
           }
         } else {
           // 调新增
@@ -257,7 +292,12 @@ const submitFn = async () => {
               type: "success",
               message: "提交成功",
             });
-            router.push("/config/permissionconfig");
+            await generateMenu()
+            if(permissionMenu.value.includes("4-2")){
+              router.push("/config/permissionconfig");
+            }else{
+              router.push("/home");
+            }
           }
         }
       } else {
@@ -333,8 +373,7 @@ const checkboxChange = (a, b) => {
     });
   }
   // 当父节点取消选中子节点也取消选中
-  if (!currentNode.checked) {
-    function change(Node) {
+  function change(Node) {
       const current = treeRef.value.getNode(Node);
       current.checked = false;
       if (Node.childNodes) {
@@ -343,6 +382,7 @@ const checkboxChange = (a, b) => {
         }
       }
     }
+  if (!currentNode.checked) {
     change(currentNode);
   }
 };

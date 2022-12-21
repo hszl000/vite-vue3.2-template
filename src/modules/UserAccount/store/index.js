@@ -20,6 +20,7 @@ export const useUserAccountStore = defineStore('UserAccount', {
     return {
       userInfo: [],
       permissionList: [],
+      dynamicRouting: []
     }
   },
   getters: {
@@ -33,9 +34,11 @@ export const useUserAccountStore = defineStore('UserAccount', {
       return this.filterResponse(res)
     },
     // 退出登录
-    logout(){
+    logout() {
       this.userInfo = []
       this.permissionList = []
+      // 清空动态路由
+      this.removePrivateRoutes()
     },
     // 请求用户数据
     async askUserInfo(data) {
@@ -47,16 +50,33 @@ export const useUserAccountStore = defineStore('UserAccount', {
     // 请求用户菜单权限
     async askUserMenu(data) {
       const res = await getUserMenu(data)
-      return this.filterResponse(res,({result})=>{
+      return this.filterResponse(res, ({ result }) => {
+        this.removePrivateRoutes()
         this.permissionList = result
+        this.filterPrivateRoutes(result)
       })
     },
     async filterPrivateRoutes(promission) {
       const newRoutes = flatteningRoutes(PrivateRouites, promission)
+      this.dynamicRouting = newRoutes
+      console.log(newRoutes, 'newRoutes')
       newRoutes.forEach(route => {
         this.router.addRoute(route)
       })
+      // 动态添加 404 捕获
+      const errorPath = {
+        path: "/:pathMatch(.*)*",
+        name: "404",
+        component: () => import("@/components/404.vue"),
+      };
+      this.router.addRoute(errorPath)
       return true
+    },
+    removePrivateRoutes() {
+      this.dynamicRouting.forEach(route => {
+        this.router.removeRoute(route.name)
+      })
+      this.dynamicRouting = []
     }
   },
   ...mixin
