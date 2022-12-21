@@ -23,7 +23,7 @@ const layoutFormat = computed(() => layoutStore.getLayoutFormat);
 .headline {
   box-sizing: border-box;
   height: 60px;
-  border-bottom: 1px solid #282a35;
+  border-bottom: 1px solid var(--el-color-primary-light-3);
   padding: 0px 5px;
   display: flex;
   justify-content: space-around;

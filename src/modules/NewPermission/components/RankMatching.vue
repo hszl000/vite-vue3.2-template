@@ -53,10 +53,10 @@
         <span class="status-dot">
           <i
             :style="{
-              backgroundColor: statusDataMap[row.id !== null ? 0 : 1].color,
+              backgroundColor: statusDataMap[row.types ? 0 : 1].color,
             }"
           ></i>
-          {{ statusDataMap[row.id !== null ? 0 : 1].text }}
+          {{ statusDataMap[row.types ? 0 : 1].text }}
         </span>
       </template>
     </el-table-column>

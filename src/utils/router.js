@@ -90,12 +90,12 @@ export const flatteningRoutes = (routes, permission) => {
       route.children &&
       (route.children = flatteningRoutes(route.children, permission))
   );
-  const errorPath = {
-    path: "/:pathMatch(.*)*",
-    name: "404",
-    component: defineAsyncComponent(() => import("@/components/404.vue")),
-  };
+  // const errorPath = {
+  //   path: "/:pathMatch(.*)*",
+  //   name: "404",
+  //   component: defineAsyncComponent(() => import("@/components/404.vue")),
+  // };
 
-  routes_.push(errorPath);
+  // routes_.push(errorPath);
   return routes_;
 };
