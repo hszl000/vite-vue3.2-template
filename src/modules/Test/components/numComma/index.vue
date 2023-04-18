@@ -3,8 +3,8 @@
     <el-input
       v-model="num"
       placeholder="Please input"
-      :formatter="(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
-      :parser="(value) => value.replace(/\$\s?|(,*)/g, '')"
+      :formatter="handleFormatter"
+      :parser="handleParser"
       @input='handleChange'
     />
   </div>
@@ -20,6 +20,18 @@ setTimeout(()=>{
 
 const handleChange = (val)=>{
   console.log(val)
+}
+
+const handleFormatter = (value) => {
+  value = `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  console.log(value,'handleFormatter')
+  return value
+}
+
+const handleParser = (value) => {
+  value = value.replace(/\$\s?|(,*)/g, '')
+  console.log(value,'handleParser')
+  return value
 }
 </script>
 
