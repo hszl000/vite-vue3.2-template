@@ -21,6 +21,7 @@
       v-debounce="debounce"
       v-model="value"
     />
+    <el-button @click='testModal'>测试Modal</el-button>
   </div>
 </template>
 
@@ -29,6 +30,7 @@ import { ref } from "vue";
 import { ServiceLoading } from "widgets/loading.js";
 import { storeToRefs } from "pinia";
 import { useLayoutStore } from "comps/Layout/store";
+import {useModal} from 'comps/Modal/useModal.js'
 
 const layoutStore = useLayoutStore();
 const { layoutFormat } = storeToRefs(layoutStore);
@@ -127,6 +129,12 @@ const longpress = () => {
 const debounce = () => {
   console.log("防抖");
 };
+
+// 测试 Modal
+const testModal = ()=>{
+  const {Modal} = useModal()
+  console.log(Modal,'Modal')
+}
 </script>
 
 <style lang='scss' scoped></style>

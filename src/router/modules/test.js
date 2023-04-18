@@ -49,6 +49,26 @@ export default {
         roles:[]
       },
       component: () => import('@/modules/Test/components/numComma/index.vue')
-    }
+    },
+    {
+      path: '/test/activiti',
+      name: 'ProjectActiviti',
+      meta: {
+        title: 'activiti',
+        icon:'user',
+        roles:[]
+      },
+      component: () => import('@/modules/Test/components/activiti/index.vue')
+    },
+    {
+      path: '/test/recursion',
+      name: 'ProjectRecursion',
+      meta: {
+        title: 'recursion',
+        icon:'user',
+        roles:[]
+      },
+      component: () => import('@/modules/Test/components/recursion/index.vue')
+    },
   ]
 }

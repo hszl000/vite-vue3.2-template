@@ -39,7 +39,9 @@ export default {
     set:'Set',
     map:'Map',
     wangEditor:'富文本编辑器',
-    numComma:'千分位互转'
+    numComma:'千分位互转',
+    activiti:'流程图',
+    recursion:'递归数据'
   },
   base: {
     upros: "通用专业系统",

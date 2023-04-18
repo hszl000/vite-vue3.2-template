@@ -69,7 +69,7 @@
 </template>
 
 <script setup>
-import { ref, getCurrentInstance, reactive, defineExpose } from "vue";
+import { ref, getCurrentInstance } from "vue";
 import { useNewPermissionStore } from "modules/NewPermission/store";
 import RankSelectionDialog from "@/modules/NewPermission/components/RankSelectionDialog.vue";
 const { proxy } = getCurrentInstance();

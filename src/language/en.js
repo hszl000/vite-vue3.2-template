@@ -39,7 +39,9 @@ export default {
     set:'Set',
     map:'Map',
     wangEditor:'wangEditor',
-    numComma:'Number Comma'
+    numComma:'Number Comma',
+    activiti:'Activiti',
+    recursion:'Recursion'
   },
   base: {
     upros: "Universal Professional  System",

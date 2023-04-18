@@ -5,6 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { terser } from 'rollup-plugin-terser'
 
 // 导入 path
 const path = require('path')
@@ -20,7 +21,7 @@ const htmlPlugin = () => {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:'/basis-templete-permissions',
+  base:'/basis-templete-permissions/',
   plugins: [
     vue(),
     htmlPlugin(),
@@ -34,7 +35,14 @@ export default defineConfig({
       // 配置路径, 项目存放svg的目录
       iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
       symbolId: 'icon-[dir]-[name]'
-    })
+    }),
+    terser(
+      {
+        compress: {
+          drop_console: true
+        }
+      }
+    )
   ],
   server: {
     port: 5000,

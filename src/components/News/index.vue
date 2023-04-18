@@ -183,7 +183,6 @@ import {
   computed,
   getCurrentInstance,
   watch,
-  defineExpose,
 } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useUserAccountStore } from "modules/UserAccount/store";
