@@ -2,6 +2,7 @@
   "name": "basis-templete-permissions",
   "private": true,
   "version": "0.0.0",
+  "description": "企业基础模板（人员派遣）",
   "scripts": {
     "serve": "vite",
     "build": "vite build",
