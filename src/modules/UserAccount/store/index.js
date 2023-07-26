@@ -59,7 +59,7 @@ export const useUserAccountStore = defineStore('UserAccount', {
     async filterPrivateRoutes(promission) {
       const newRoutes = flatteningRoutes(PrivateRouites, promission)
       this.dynamicRouting = newRoutes
-      console.log(newRoutes, 'newRoutes')
+      // console.log(newRoutes, 'newRoutes')
       newRoutes.forEach(route => {
         this.router.addRoute(route)
       })

@@ -1,37 +1,51 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-essential"
+  ],
+  "overrides": [
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "legacyDecorators": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/vue3-essential"
-    ],
-    "overrides": [
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "vue"
-    ],
-    "rules": {
-        "vue/multi-word-component-names": 0,
-        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-        'no-unused-vars': 1,
-        'vue/no-unused-components': 1,
-        'vue/no-mutating-props': 0,
-        'vue/html-self-closing': ['error', {
-            "html": {
-                "void": 'never',
-                "normal": 'never',
-                "component": 'always'
-            },
-            "svg": 'always',
-            "math": 'always'
-        }]
-    }
+    "parser": "@babel/eslint-parser"
+  },
+  "plugins": [
+    "vue"
+  ],
+  "rules": {
+    /**
+           * "off" 或 0：关闭规则。
+           * "warn" 或 1：开启规则并设为警告（不会导致程序退出）。
+           * "error" 或 2：开启规则并设为错误（会导致程序退出）。
+           */
+    "indent": [2, 2],
+    "no-multiple-empty-lines": [2, { "max": 1 }], // 不允许出现连续多行空白。
+    "no-const-assign": 2, // 禁止修改 const 声明
+    "vue/multi-word-component-names": 0,
+    "no-multi-spaces": 2, // 禁止使用多余的空格
+    "no-trailing-spaces": 1, // 末尾去除多余空格
+    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off", // 使用 console.log
+    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off", // 使用 debugger
+    "no-unused-vars": 1, // 定义的变量没有使用
+    "vue/no-unused-components": 1,
+    "vue/no-mutating-props": 0,
+    "vue/html-self-closing": [1, {
+      "html": {
+        "void": "never",
+        "normal": "never",
+        "component": "always"
+      },
+      "svg": "always",
+      "math": "always"
+    }]
+  }
 }

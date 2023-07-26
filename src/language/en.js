@@ -41,7 +41,8 @@ export default {
     wangEditor:'wangEditor',
     numComma:'Number Comma',
     activiti:'Activiti',
-    recursion:'Recursion'
+    recursion:'Recursion',
+    export:"Export"
   },
   base: {
     upros: "Universal Professional  System",

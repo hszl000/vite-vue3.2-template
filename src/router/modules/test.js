@@ -11,7 +11,7 @@ export default {
   },
   children: [
     {
-      path: '/test/test1',
+      path: 'test1',
       name: 'ProjectTest',
       meta: {
         title: 'test1',
@@ -21,7 +21,7 @@ export default {
       component: () => import('@/modules/Test/pages/index.vue')
     },
     {
-      path: '/test/guide',
+      path: 'guide',
       name: 'ProjectGuide',
       meta: {
         title: 'guide',
@@ -31,7 +31,7 @@ export default {
       component: () => import('@/modules/Test/components/guide/index.vue')
     },
     {
-      path: '/test/wangEditor',
+      path: 'wangEditor',
       name: 'ProjectWangEditor',
       meta: {
         title: 'wangEditor',
@@ -41,7 +41,7 @@ export default {
       component: () => import('@/modules/Test/components/wangEditor/index.vue')
     },
     {
-      path: '/test/numComma',
+      path: 'numComma',
       name: 'ProjectNumComma',
       meta: {
         title: 'numComma',
@@ -51,7 +51,7 @@ export default {
       component: () => import('@/modules/Test/components/numComma/index.vue')
     },
     {
-      path: '/test/activiti',
+      path: 'activiti',
       name: 'ProjectActiviti',
       meta: {
         title: 'activiti',
@@ -61,7 +61,7 @@ export default {
       component: () => import('@/modules/Test/components/activiti/index.vue')
     },
     {
-      path: '/test/recursion',
+      path: 'recursion',
       name: 'ProjectRecursion',
       meta: {
         title: 'recursion',
@@ -70,5 +70,16 @@ export default {
       },
       component: () => import('@/modules/Test/components/recursion/index.vue')
     },
+    {
+      path: 'export',
+      name: 'Export',
+      meta: {
+        title: 'export',
+        icon:'user',
+        roles:[]
+      },
+      component: () => import('@/modules/Test/components/Export/index.vue')
+    },
+
   ]
 }

@@ -115,6 +115,8 @@ export const useRecursion = () => {
   }
 
   return {
+    recursionData,
+    tableHeader,
     columns,
     expandColumnKey,
     treeData,

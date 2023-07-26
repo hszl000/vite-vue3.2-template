@@ -39,7 +39,7 @@ router.beforeEach(async(to,from,next)=>{
   // 2.是否拥有token,没有重定向login
   const token = Cookie.get('token')
   if(!token) return next({ name:'ProjectLogin', replace: true });
- 
+
   // 3.是否有当前用户数据（userInfo）没有则请求
   if(!Object.keys(userAccountStore.getUserInfo).length){
     const {error,data:{token,result}} = await userAccountStore.askUserInfo()

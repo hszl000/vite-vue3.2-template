@@ -13,7 +13,7 @@ export default {
   children: [
     // 权限配置
     {
-      path: "/config/permissionconfig",
+      path: "permissionconfig",
       name: "ProjectPermissionConfig",
       meta: {
         title: "permissionConfig",
@@ -25,7 +25,7 @@ export default {
     },
     // 新建
     {
-      path: "/config/newPermission",
+      path: "newPermission",
       name: "newPermission",
       meta: {
         title: "newPermission",

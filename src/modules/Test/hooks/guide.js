@@ -183,14 +183,13 @@ export default class Guide {
     // 获取指引盒子的 w h
     const { width: guideW, height: guideH } = this.tooltipEle.getBoundingClientRect()
 
-
     // 获取指引 子元素
     const [header, main, footer] = this.tooltipEle.children
     // 赋值
     header.children[0].innerHTML = v.title
     main.innerHTML = v.content
 
-    // 
+    //
     // this.cloneGuide = el.cloneNode(true)
     // console.log(this.cloneGuide,'this.cloneGuide')
     // this.cloneGuide.id = 'copy_'+this.cloneGuide.id
@@ -227,15 +226,15 @@ export default class Guide {
 
   end() {
     if(this.tooltipEle){
-        // 移除元素
-    delete this.index
-    delete this.data
-    document.body.removeChild(this.tooltipEle)
-    document.body.removeChild(this.maskLayer)
-    delete this.tooltipEle
-    delete this.maskLayer
-    if (window.onresize) window.removeEventListener('resize')
-    if (window.onscroll) window.removeEventListener('scroll')
+      // 移除元素
+      delete this.index
+      delete this.data
+      document.body.removeChild(this.tooltipEle)
+      document.body.removeChild(this.maskLayer)
+      delete this.tooltipEle
+      delete this.maskLayer
+      if (window.onresize) window.removeEventListener('resize')
+      if (window.onscroll) window.removeEventListener('scroll')
     }
   }
 
@@ -258,7 +257,6 @@ export default class Guide {
     this.start(this)
 
   }
-
 
 }
 
