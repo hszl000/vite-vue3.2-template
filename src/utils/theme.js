@@ -1,17 +1,8 @@
-import { ref, watchEffect } from "vue";
+import { ref } from "vue";
 import axios from "axios";
 
-const modules = import.meta.glob("element-plus/package.json");
-// ele 版本
-export const version = ref("");
 // ele style
 export const eleStyle = ref("");
-
-watchEffect(async () => {
-  const [module] = Object.values(modules);
-  const eleModule = await module();
-  version.value = eleModule.version;
-});
 
 /**
  * 生成主题色以及主题色延伸出的请景色
@@ -64,12 +55,9 @@ export const getThemeCluster = (theme) => {
 };
 
 // 发送请求 拿到ele当前版本 css 文件
-export const getCSSString = (url) => {
-  return new Promise(async (resolve) => {
-    const res = await axios.get(url);
-    eleStyle.value = res.data.replace(/@font-face{[^}]+}/, "");
-    resolve();
-  });
+export const getCSSString = async (url) => {
+  const res = await axios.get(url);
+  eleStyle.value = res.data.replace(/@font-face{[^}]+}/, "");
 };
 
 /**

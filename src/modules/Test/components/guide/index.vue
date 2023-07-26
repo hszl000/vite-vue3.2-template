@@ -16,7 +16,9 @@ onMounted(()=>{
 })
 
 onBeforeUnmount(()=>{
-guide.value.end()
+  if(guide.value){
+    guide.value.end()
+  }
 })
 
 const startGuide = ()=>{
@@ -46,6 +48,6 @@ const startGuide = ()=>{
 .guide-box{
   display: flex;
   justify-content: space-between;
-  
+
 }
 </style>

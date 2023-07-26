@@ -74,8 +74,8 @@ const loginFrom = ref(null);
 
 // 账号密码收集
 const fromData = ref({
-    userName: "admin",
-    passWord: "admin",
+  userName: "admin",
+  passWord: "admin",
 });
 
 // 表单校验规则
@@ -99,7 +99,8 @@ const rules = ref({
 });
 
 // 登录
-const loginSubmit =  () => {
+const loading = ref(false)
+const loginSubmit = () => {
   loginFrom.value.validate(async (isValid, invalidFields) => {
     if (isValid) {
       /**
@@ -108,12 +109,14 @@ const loginSubmit =  () => {
        *    - 成功 进入系统
        *    -不成功 login页
        */
+      loading.value = true
       const {error,data} = await userAccountStore.login(fromData.value)
       if(!error){
         Cookie.set('token',data.token)
         router.replace({ name: "Home" });
 
       }
+      loading.value = false
     }
   });
 };
@@ -129,7 +132,6 @@ const openPwd = () => {
   inputType.value = !inputType.value;
   passWordRef.value.focus()
 };
-
 
 // 是否开启大小写切换
 const toolVisible = ref(false)

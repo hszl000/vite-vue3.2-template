@@ -11,7 +11,7 @@ export default {
   },
   children: [
     {
-      path: '/study/reactive',
+      path: 'reactive',
       name: 'ProjectStudy',
       meta: {
         title: 'ProxyAndReflect',
@@ -21,7 +21,7 @@ export default {
       component: () => import('@/modules/Study/pages/index.vue')
     },
     {
-      path: '/study/set',
+      path: 'set',
       name: 'ProjectSet',
       meta: {
         title: 'set',
@@ -31,7 +31,7 @@ export default {
       component: () => import('@/modules/Study/pages/Set.vue')
     },
     {
-      path: '/study/map',
+      path: 'map',
       name: 'ProjectMap',
       meta: {
         title: 'map',

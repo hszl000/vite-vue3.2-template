@@ -5,21 +5,17 @@
 <script setup>
 import { getCurrentInstance } from "vue";
 import SelectColor from "comps/ThemePicker/components/SelectColor.vue";
-// import AAA from "comps/404.vue";
-
-const { proxy } = getCurrentInstance();
-
 import { ref, computed, watch } from "vue";
 import { useLayoutStore } from "comps/Layout/store";
 import {
-  version,
   getThemeCluster,
   getCSSString,
   updateStyle,
   getHandler,
 } from "utils/theme.js";
-import { ElMessage } from "element-plus";
+import { ElMessage,version } from "element-plus";
 
+const { proxy } = getCurrentInstance();
 const layoutStore = useLayoutStore();
 
 const chalk = ref(""); // content of theme-chalk css
@@ -45,7 +41,7 @@ watch(
     console.log(themeCluster, originalCluster);
 
     if (!chalk.value) {
-      const url = `https://unpkg.com/element-plus@${version.value}/dist/index.css`;
+      const url = `https://unpkg.com/element-plus@${version}/dist/index.css`;
       await getCSSString(url);
       ElMessage.success(proxy.$t("layout.theme"));
     }
