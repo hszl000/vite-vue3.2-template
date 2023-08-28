@@ -42,7 +42,8 @@ export default {
     numComma:'千分位互转',
     activiti:'流程图',
     recursion:'递归数据',
-    export:"导出"
+    export:"导出",
+    notification:"Notification"
   },
   base: {
     upros: "通用专业系统",

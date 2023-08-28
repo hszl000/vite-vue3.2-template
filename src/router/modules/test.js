@@ -80,6 +80,16 @@ export default {
       },
       component: () => import('@/modules/Test/components/Export/index.vue')
     },
+    {
+      path: 'notification',
+      name: 'Notification',
+      meta: {
+        title: 'notification',
+        icon:'user',
+        roles:[]
+      },
+      component: () => import('@/modules/Test/components/Notification/index.vue')
+    },
 
   ]
 }

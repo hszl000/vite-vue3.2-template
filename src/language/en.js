@@ -42,7 +42,8 @@ export default {
     numComma:'Number Comma',
     activiti:'Activiti',
     recursion:'Recursion',
-    export:"Export"
+    export:"Export",
+    notification:"Notification"
   },
   base: {
     upros: "Universal Professional  System",
