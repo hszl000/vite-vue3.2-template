@@ -130,7 +130,7 @@ service.interceptors.response.use(response=>{
   }
   return data
 },error => {
-  openNotification();
+  // openNotification();
   /**
    * 某些特定的接口 404 500 需要跳转
    * 在需要重定向的接口中传入 redirect字段  值为要跳转的路由

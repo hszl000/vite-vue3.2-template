@@ -30,6 +30,7 @@ const lang = computed(() => {
     };
   }
 });
+
 </script>
 
 <style lang="scss">
