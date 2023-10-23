@@ -1,0 +1,339 @@
+{
+    "error": 0,
+    "messaeg": "OK",
+    "value": {
+        "data": {
+            "H1000-Note-07": [],
+            "H1000-Note-08": [],
+            "H1000-Note-01-02_Listed_BV": [
+                {
+                    "current_Closing_Checked_BookValue": 29864681.5755,
+                    "measureName": "合计",
+                    "current_Opening_Checked_BookValue": null
+                }
+            ],
+            "H1000-Note-04": [
+                {
+                    "componentCode": "abcde",
+                    "clientName": "上海凯立国际贸易有限公司",
+                    "recoveredAmount": 300000.0000,
+                    "recoveredMethod": "方式3",
+                    "recoveringReason": "原因3"
+                },
+                {
+                    "componentCode": "abcde",
+                    "clientName": "上海外综服国际贸易有限公司",
+                    "recoveredAmount": 500000.0000,
+                    "recoveredMethod": "方式5",
+                    "recoveringReason": "原因5"
+                },
+                {
+                    "componentCode": "abcde",
+                    "clientName": "上海环日国际贸易有限公司",
+                    "recoveredAmount": 200000.0000,
+                    "recoveredMethod": "方式2",
+                    "recoveringReason": "原因2"
+                },
+                {
+                    "componentCode": "abcde",
+                    "clientName": "上海苏扬芳实业有限公司",
+                    "recoveredAmount": 400000.0000,
+                    "recoveredMethod": "方式4",
+                    "recoveringReason": "原因4"
+                },
+                {
+                    "componentCode": "abcde",
+                    "clientName": "上海钜唐国际贸易有限公司",
+                    "recoveredAmount": 100000.0000,
+                    "recoveredMethod": "方式1",
+                    "recoveringReason": "原因1"
+                }
+            ],
+            "H1000-Note-01-01": [
+                {
+                    "current_Opening_Checked_Balance": 119457550.7200,
+                    "level": 0,
+                    "current_Opening_Checked_BdpAmount": 0,
+                    "bdpMethodName": "合计",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 1.0000,
+                    "current_Closing_Checked_BookValue": 29864681.5755,
+                    "prev_Closing_Checked_BookValue": 119457550.7200,
+                    "path": "/",
+                    "parentName": null,
+                    "current_Closing_Checked_BdpAmountProportion": 1.0000,
+                    "current_Closing_Checked_BdpAmount": 29336870.5145,
+                    "current_Opening_Checked_BalanceProportion": 1.0000,
+                    "current_Closing_Checked_Balance": 59201552.0900,
+                    "uniqueMemberName": "合计",
+                    "memberId": 2147483647
+                },
+                {
+                    "current_Opening_Checked_Balance": 8346768.9200,
+                    "level": 1,
+                    "current_Opening_Checked_BdpAmount": 3868794.0290,
+                    "bdpMethodName": "按单项计提坏账准备的应收账款",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.0654,
+                    "current_Closing_Checked_BookValue": 123.2010,
+                    "prev_Closing_Checked_BookValue": 4477974.8910,
+                    "path": "/按单项计提坏账准备的应收账款/",
+                    "parentName": null,
+                    "current_Closing_Checked_BdpAmountProportion": 0.1319,
+                    "current_Closing_Checked_BdpAmount": 3868794.0290,
+                    "current_Opening_Checked_BalanceProportion": 0.0699,
+                    "current_Closing_Checked_Balance": 3868917.2300,
+                    "uniqueMemberName": "按单项计提坏账准备的应收账款",
+                    "memberId": 10
+                },
+                {
+                    "current_Opening_Checked_Balance": 111110781.8000,
+                    "level": 1,
+                    "current_Opening_Checked_BdpAmount": 0.0000,
+                    "bdpMethodName": "按组合计提坏账准备",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.9346,
+                    "current_Closing_Checked_BookValue": 29864558.3745,
+                    "prev_Closing_Checked_BookValue": 111110781.8000,
+                    "path": "/按组合计提坏账准备/",
+                    "parentName": "",
+                    "current_Closing_Checked_BdpAmountProportion": 0.8681,
+                    "current_Closing_Checked_BdpAmount": 25468076.4855,
+                    "current_Opening_Checked_BalanceProportion": 0.9301,
+                    "current_Closing_Checked_Balance": 55332634.8600,
+                    "uniqueMemberName": "按组合计提坏账准备",
+                    "memberId": 40
+                },
+                {
+                    "current_Opening_Checked_Balance": 85126306.8100,
+                    "level": 2,
+                    "current_Opening_Checked_BdpAmount": 25468076.4855,
+                    "bdpMethodName": "其中：按账龄计提坏账准备",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.8471,
+                    "current_Closing_Checked_BookValue": 24680679.4945,
+                    "prev_Closing_Checked_BookValue": 59658230.3245,
+                    "path": "/按组合计提坏账准备/其中：按账龄计提坏账准备/",
+                    "parentName": "按组合计提坏账准备",
+                    "current_Closing_Checked_BdpAmountProportion": 0.8681,
+                    "current_Closing_Checked_BdpAmount": 25468076.4855,
+                    "current_Opening_Checked_BalanceProportion": 0.7126,
+                    "current_Closing_Checked_Balance": 50148755.9800,
+                    "uniqueMemberName": "其中：按账龄计提坏账准备",
+                    "memberId": 50
+                },
+                {
+                    "current_Opening_Checked_Balance": 25984474.9900,
+                    "level": 2,
+                    "current_Opening_Checked_BdpAmount": 0.0000,
+                    "bdpMethodName": "关联方组合",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.0876,
+                    "current_Closing_Checked_BookValue": 5183878.8800,
+                    "prev_Closing_Checked_BookValue": 25984474.9900,
+                    "path": "/按组合计提坏账准备/关联方组合/",
+                    "parentName": "按组合计提坏账准备",
+                    "current_Closing_Checked_BdpAmountProportion": 0.0000,
+                    "current_Closing_Checked_BdpAmount": 0.0000,
+                    "current_Opening_Checked_BalanceProportion": 0.2175,
+                    "current_Closing_Checked_Balance": 5183878.8800,
+                    "uniqueMemberName": "关联方组合",
+                    "memberId": 60
+                }
+            ],
+            "H1000-Note-05": [],
+            "H1000-Note-06": [
+                {
+                    "clientName": "PURE FISHING INC",
+                    "current_Closing_Checked_Balance": 5622175.5300,
+                    "current_Closing_Checked_BalanceProportion": 0.09496669,
+                    "current_Closing_Checked_BdpAmount": 281818.6925
+                },
+                {
+                    "clientName": "慈溪劲欧电子商务有限公司",
+                    "current_Closing_Checked_Balance": 5064040.1700,
+                    "current_Closing_Checked_BalanceProportion": 0.08553898,
+                    "current_Closing_Checked_BdpAmount": 2532020.0850
+                },
+                {
+                    "clientName": "慈溪市宗汉一平塑料制品厂",
+                    "current_Closing_Checked_Balance": 4856827.4000,
+                    "current_Closing_Checked_BalanceProportion": 0.08203885,
+                    "current_Closing_Checked_BdpAmount": 2428413.7000
+                },
+                {
+                    "clientName": "FX MASTER LIMITED",
+                    "current_Closing_Checked_Balance": 4737842.2300,
+                    "current_Closing_Checked_BalanceProportion": 0.08002902,
+                    "current_Closing_Checked_BdpAmount": 4318809.8330
+                },
+                {
+                    "clientName": "慈溪市宗汉忠坤废旧物资回收店",
+                    "current_Closing_Checked_Balance": 4291305.5900,
+                    "current_Closing_Checked_BalanceProportion": 0.07248637,
+                    "current_Closing_Checked_BdpAmount": 4291305.5900
+                }
+            ],
+            "H1000-Note-03-02": [
+                {
+                    "bdpMethodName": "关联方组合",
+                    "current_Closing_Checked_Balance": 5183878.8800,
+                    "current_Closing_Checked_BdpAmountBalanceProportion": 0.29290574166,
+                    "current_Closing_Checked_BdpAmount": 1518387.8880000
+                }
+            ],
+            "H1000-Note-01-02_Listed": [
+                {
+                    "current_Opening_Checked_Balance": 5000000,
+                    "current_Closing_Checked_BdpAmount": 734753.1356250,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "ageName": "1年以内",
+                    "current_Closing_Checked_Balance": 17409521.6415
+                },
+                {
+                    "current_Opening_Checked_Balance": 20000000,
+                    "current_Closing_Checked_BdpAmount": 25172.1200000,
+                    "current_Opening_Checked_BdpAmount": 10000000,
+                    "ageName": "1-2年",
+                    "current_Closing_Checked_Balance": 2935600.0800
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmount": 1259119.1650000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "ageName": "2-3年",
+                    "current_Closing_Checked_Balance": 5036476.6600
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmount": 6747302.1250000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "ageName": "3-4年",
+                    "current_Closing_Checked_Balance": 16270283.9100
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmount": 12901113.2500000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "ageName": "4-5年",
+                    "current_Closing_Checked_Balance": 12963031.8500
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmount": 3800616.6900000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "ageName": "5年以上",
+                    "current_Closing_Checked_Balance": 4617353.5300
+                }
+            ],
+            "H1000-Note-03-01": [
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmountProportion": 0.02884996580,
+                    "current_Closing_Checked_BdpAmount": 734753.1356250,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "current_Opening_Checked_BalanceProportion": null,
+                    "ageName": "1年以内",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.29284937,
+                    "current_Closing_Checked_Balance": 14695062.7125
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmountProportion": 0.00098837932,
+                    "current_Closing_Checked_BdpAmount": 25172.1200000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "current_Opening_Checked_BalanceProportion": null,
+                    "ageName": "1-2年",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.00501641,
+                    "current_Closing_Checked_Balance": 251721.2000
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmountProportion": 0.04943911511,
+                    "current_Closing_Checked_BdpAmount": 1259119.1650000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "current_Opening_Checked_BalanceProportion": null,
+                    "ageName": "2-3年",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.10036902,
+                    "current_Closing_Checked_Balance": 5036476.6600
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmountProportion": 0.26493175206,
+                    "current_Closing_Checked_BdpAmount": 6747302.1250000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "current_Opening_Checked_BalanceProportion": null,
+                    "ageName": "3-4年",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.26892613,
+                    "current_Closing_Checked_Balance": 13494604.2500
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmountProportion": 0.50656017376,
+                    "current_Closing_Checked_BdpAmount": 12901113.2500000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "current_Opening_Checked_BalanceProportion": null,
+                    "ageName": "4-5年",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.25709879,
+                    "current_Closing_Checked_Balance": 12901113.2500
+                },
+                {
+                    "current_Opening_Checked_Balance": null,
+                    "current_Closing_Checked_BdpAmountProportion": 0.14923061395,
+                    "current_Closing_Checked_BdpAmount": 3800616.6900000,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "current_Opening_Checked_BalanceProportion": null,
+                    "ageName": "5年以上",
+                    "current_Opening_Checked_BdpAmountProportion": null,
+                    "current_Closing_Checked_BalanceProportion": 0.07574028,
+                    "current_Closing_Checked_Balance": 3800616.6900
+                }
+            ],
+            "H1000-Note-01-02_Listed_BDP": [
+                {
+                    "current_Closing_Checked_BdpAmount": 29336870.5145,
+                    "current_Opening_Checked_BdpAmount": null,
+                    "measureName": "坏账准备"
+                }
+            ],
+            "H1000-Note-02": [
+                {
+                    "clientName": "山东环球渔具股份有限公司",
+                    "current_Closing_Checked_Balance": 1343285.4300,
+                    "current_Closing_Checked_BdpAmount": 1343285.4300,
+                    "current_Closing_Checked_BdpAmountBalanceProportion": 1.00000000
+                },
+                {
+                    "clientName": "SERT S.A",
+                    "current_Closing_Checked_Balance": 941588.8800,
+                    "current_Closing_Checked_BdpAmount": 941541.0526,
+                    "current_Closing_Checked_BdpAmountBalanceProportion": 0.99994921
+                },
+                {
+                    "clientName": "KLESSERT IMPEX LLP",
+                    "current_Closing_Checked_Balance": 1010754.7100,
+                    "current_Closing_Checked_BdpAmount": 1010679.3364,
+                    "current_Closing_Checked_BdpAmountBalanceProportion": 0.99992543
+                },
+                {
+                    "clientName": "应收账款-ONE TRADING CO.,LTD",
+                    "current_Closing_Checked_Balance": 295674.9800,
+                    "current_Closing_Checked_BdpAmount": 295674.9800,
+                    "current_Closing_Checked_BdpAmountBalanceProportion": 1.00000000
+                },
+                {
+                    "clientName": "应收账款-筏钓轮-ONE TRADING",
+                    "current_Closing_Checked_Balance": 277613.2300,
+                    "current_Closing_Checked_BdpAmount": 277613.2300,
+                    "current_Closing_Checked_BdpAmountBalanceProportion": 1.00000000
+                }
+            ]
+        },
+        "openingDataSource": 2
+    }
+}

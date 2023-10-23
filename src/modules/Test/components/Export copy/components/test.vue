@@ -5,7 +5,6 @@
 <script setup name="XlsxExample">
 import { utils, writeFileXLSX } from 'xlsx'
 import MergeCell from './MergeCell.js'
-import {tableHeade} from 'modules/Test/components/Export/data/index'
 
 const props = defineProps({
   data:{

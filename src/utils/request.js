@@ -1,6 +1,9 @@
 import axios from 'axios'
 import Cookie from 'js-cookie'
 import router from '@/router'
+import {useNotification} from 'modules/Test/hooks/useNotification'
+
+const {openNotification} = useNotification()
 
 /**
  * @param {function} errorRedirect 错误重定向
@@ -67,17 +70,17 @@ const service = axios.create({
 /**
  * request (请求拦截)
  */
- service.interceptors.request.use(request=>{
+service.interceptors.request.use(request=>{
   const token = Cookie.get('token')
   // 封装请求 携带 token
   request.headers.Authorization = `Bearer ${token}` || ''
   // request.headers.Authorization = token || ''
   return request
- },error=>{
+},error=>{
   return new Promise.reject(error)
- })
+})
 
- /**
+/**
   * respone (响应拦截)
   */
 service.interceptors.response.use(response=>{
@@ -127,6 +130,7 @@ service.interceptors.response.use(response=>{
   }
   return data
 },error => {
+  // openNotification();
   /**
    * 某些特定的接口 404 500 需要跳转
    * 在需要重定向的接口中传入 redirect字段  值为要跳转的路由
@@ -191,7 +195,7 @@ function extractFileNameFromContentDispositionHeader (value) {
 
   return null
 }
-  
+
 export function downloadFile (boldData, filename = 'shinewing', type) {
   // TODO: https://blog.csdn.net/weixin_42142057/article/details/97655591
   const blob = boldData instanceof Blob
@@ -209,7 +213,7 @@ export function downloadFile (boldData, filename = 'shinewing', type) {
 
   document.body.removeChild(link)
 }
-  
+
 export function useResHeadersAPI (headers, resData) {
   const disposition = headers['content-disposition']
   if (disposition) {
@@ -225,5 +229,5 @@ export function useResHeadersAPI (headers, resData) {
     filename && downloadFile(resData, filename, headers['content-type'])
   }
 }
-  
+
 export default service
